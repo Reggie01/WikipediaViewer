@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<head lang="en">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width initial-scale=1">
+  <meta name="description" content="Zipline: Use Wikipedia API to create an app that allows you to search Wikipedia site and view results.">
+  <meta name="keywords" content="FreeCodeCamp, zipline, fcc">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" >
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/main.css"/>
+  <title>Wikipedia Viewer</title>
+  <!--[if lte IE 8]>
+    <link rel="stylesheet" type="text/css" href="css/ie8-and-down.css" />
+  </![endif]-->
+</head>
+  <body>
+    <div id="random_article_container" class="container"></div>
+    <div id="searchbox_container"></div>
+    <div id="list_container">
+      <ul class="list-group" id="list_ul">
+      
+      </ul> 
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script id="list-template" type="text/x-handlebars-template">
+      {{#each items}}
+        <a href="" target="_blank">
+          <li class="list-group-item">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+          </li>
+        </a>
+      {{/each}}
+    </script>
+    <script id="searchbox-template" type="text/x-handlebars-template">
+      <form class="form-inline">
+        <div class="form-group">
+          <label for="exampleInputEmail2">Wiki</label>
+          <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter Search...">
+        </div>
+        <button type="submit" class="btn btn-default">Search</button>
+      </form>
+    </script>
+    <script id="random-article-template" type="text/x-handlebars-template">
+      <a class="btn btn-default" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank"role="button">Link Hello</a>
+    </script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
+  
