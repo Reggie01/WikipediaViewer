@@ -14,37 +14,51 @@
   </![endif]-->
 </head>
   <body>
-    <div id="random_article_container" class="container"></div>
-    <div id="searchbox_container"></div>
-    <div id="list_container">
-      <ul class="list-group" id="list_ul">
-      
-      </ul> 
+    <div class="container">
+      <div id="random_article_container" class="container"></div>
+      <div id="searchbox_container"></div><div id="result_counter_container"></div>
+      <div id="list_container"></div>
     </div>
+    
     <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script id="list-template" type="text/x-handlebars-template">
-      {{#each items}}
-        <a href="" target="_blank">
+      <ul class="list-group list_template_ul" id="list_ul">
+        {{#each items}}
+        <a href="{{url}}" target="_blank">
           <li class="list-group-item">
+            <div class="list-indicator"></div>
             <h3>{{title}}</h3>
-            <p>{{description}}</p>
+            <p>{{extract}}</p>
           </li>
         </a>
-      {{/each}}
+        {{/each}}
+      </ul>
+      {{#if results}}
+        <div>No results</div>
+      {{/if}}
     </script>
     <script id="searchbox-template" type="text/x-handlebars-template">
-      <form class="form-inline">
-        <div class="form-group">
-          <label for="exampleInputEmail2">Wiki</label>
-          <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter Search...">
-        </div>
-        <button type="submit" class="btn btn-default">Search</button>
-      </form>
+       <div id="searchbox_container">
+        <form class="">
+          <div class="form-group searchbox_form_group">
+            <label for="exampleInputEmail2">Wiki Search</label>
+            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter Search...">
+          </div>
+          <button type="submit" class="btn btn-default">Search</button>
+        </form>
+      </div>
+    </script>
+    <script id="result-counter-template" type="text/x-handlebars-template">
+      <div id="result_counter_container">
+        <span class="list-count">{{count}} items</span>
+      </div>
     </script>
     <script id="random-article-template" type="text/x-handlebars-template">
-      <a class="btn btn-default" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank"role="button">Link Hello</a>
+      
+        <a class="cl-effect-1" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank" data-hover="Random Wiki Search">Random Wiki Search</a>
+      
     </script>
     <script src="js/index.js"></script>
   </body>

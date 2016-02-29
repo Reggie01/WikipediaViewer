@@ -6,9 +6,10 @@
     4.Link/Button Component
     5. Search Component
     6. List Component
-    7. Footer
-    8. Sticky footer styles
-    9. Media Queries
+    7. Result List Component
+    8. Footer
+    9. Sticky footer styles
+    10. Media Queries
 */
 /* 1. Basic Document Styles
 -------------------------------------------------*/
@@ -18,6 +19,10 @@ html * {
     -moz-osx-font-smoothing: grayscale;
 }
 html {  font-size: 100%;  }
+
+html, body {
+  height: 100%;
+}
 
 body {
     overflow-x: hidden;
@@ -207,13 +212,115 @@ a {  color: #9C27B0;  }
 /* 4.Link/Button Component
 ---------------------------------------*/
 
+/* http://tympanus.net/codrops/2013/08/06/creative-link-effects/ 
+   this guide has demo and link to github that a variety of links. I used the first effect.
+*/
+
+.cl-effect-1{
+  margin: 15px 25px;
+  outline: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px rgba(255,255,255,0.3);
+}
+
+.cl-effect-1:hover, 
+.cl-effect-1:focus{
+  outline: none;
+  text-decoration: none;
+}
+
+.cl-effect-1::before,
+.cl-effect-1::after {
+	display: inline-block;
+	opacity: 0;
+	-webkit-transition: -webkit-transform 0.3s, opacity 0.2s;
+	-moz-transition: -moz-transform 0.3s, opacity 0.2s;
+	transition: transform 0.3s, opacity 0.2s;
+}
+
+.cl-effect-1::after {
+	margin-left: 10px;
+	content: ']';
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(-20px);
+}
+
+.cl-effect-1::before{
+  margin-right: 10px;
+  content: "[";
+  -webkit-transform: translateX( 20px );
+  -moz-transform: translateX( 20px );
+  transform: translateX( 20px );
+}
+
+.cl-effect-1:hover::before,
+.cl-effect-1:hover::after,
+.cl-effect-1:focus::before,
+.cl-effect-1:focus::after {
+	opacity: 1;
+	-webkit-transform: translateX(0px);
+	-moz-transform: translateX(0px);
+	transform: translateX(0px);
+}
+
 /* 5.Search Component
 ---------------------------------------*/
+#searchbox_container{
+  display: inline-block;
+}
+
+.searchbox_form_group{
+  display: inline-block;
+}
 
 /* 6.List Component
 ---------------------------------------*/
+.list-group-item{
+  height: 100%;
+}
 
-/* 7. Footer
+.list-group-item:last-child{
+  margin-bottom: 30px;
+}
+
+.list_template_ul:hover{
+  opacity: 3;
+}
+
+.list_template_ul a {
+  text-decoration: none;
+  outline: none;
+}
+
+.list_template_ul a:hover {
+  text-decoration: none;
+  outline: none;
+}
+
+.list-indicator{
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 20px;
+  background-color: #9C27B0;
+}
+
+.light_indicator_lighter{
+  opacity: 0.3;
+}
+
+/* 7.Result List Component
+---------------------------------------*/
+
+#result_counter_container{
+  display: inline-block;
+}
+
+/* 8. Footer
 ---------------------------------------*/
 
 footer {  background-color: #fafafa;  }
@@ -241,7 +348,7 @@ footer ul li a:hover {
     margin-top: 0.714rem;
 }
 
-/* 8. Sticky footer styles
+/* 9. Sticky footer styles
 -------------------------------------------------- */
 html {
   position: relative;
@@ -260,7 +367,7 @@ footer {
   background-color: #f5f5f5;
 }
 
-/* 9. Media Queries
+/* 10. Media Queries
 ------------------------------ */
 
 @media (max-width: 800px) {

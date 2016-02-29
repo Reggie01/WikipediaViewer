@@ -24,6 +24,12 @@ My first version of the Twitch JSON API is at [codepen](http://codepen.io/Reggie
   
 ### APIs
 * https://www.mediawiki.org/wiki/API:Main_page
+* https://www.mediawiki.org/wiki/API:Search
+* http://stackoverflow.com/questions/8555320/is-there-a-clean-wikipedia-api-just-for-retrieve-content-summary
+
+### Tutorials Sites for widgets
+http://tympanus.net/codrops/2013/06/26/expanding-search-bar-deconstructed/
+http://www.robsawyer.me/blog/2013/07/10/lightweight-jquery-searchfilter-tutorial/c
 
 ### Technologies Used
 * javascript
