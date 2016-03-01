@@ -30,12 +30,12 @@
   $( "form" ).submit( formHandler );
   $( "#list_container" ).delegate( "li", "mouseenter", function( e ) {     
     $( e.currentTarget ).find( ".list-indicator").addClass( "light_indicator_lighter" );        
-     console.log( e.currentTarget );   
+ 
   });
   
   $( "#list_container" ).delegate( "li", "mouseleave", function( e ) {    
     $( e.currentTarget ).find( ".list-indicator").removeClass( "light_indicator_lighter" );  
-    console.log( e.currentTarget ); 
+
   });
   
   function createWikipediaUrl( title ){
@@ -50,7 +50,7 @@
   function handleWikipediaResp( data ){
      
      var items = [];
-     if( data.query !== undefined ){
+     if( data.query !== undefined  ){
 
       var pages = data.query.pages;
       for (var page in pages ){
@@ -117,5 +117,4 @@
         fail( AjaxErrorHandler );
     };
     
-    //ajaxRequest( searchTerm );
 });

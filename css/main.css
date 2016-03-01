@@ -1,4 +1,8 @@
-﻿/* TABLE OF CONTENTS
+﻿/* http://tympanus.net/codrops/2013/08/06/creative-link-effects/ 
+   this guide has demo and link to github that show a variety of links. I used the first effect.
+*/
+
+/* TABLE OF CONTENTS
 
     1. Basic Document Styles
     2. Typography
@@ -209,11 +213,15 @@ a {  color: #9C27B0;  }
     background: #E040FB;
     box-shadow: 0 4px 5px 0 rgba(0,0,0,.14), 0 1px 10px 0 rgba(0,0,0,.12), 0 2px 4px -1px rgba(0,0,0,.2);
 }
+
+.app_container{
+  margin-top: 50px; 
+}
 /* 4.Link/Button Component
 ---------------------------------------*/
 
 /* http://tympanus.net/codrops/2013/08/06/creative-link-effects/ 
-   this guide has demo and link to github that a variety of links. I used the first effect.
+   this guide has demo and link to github that show a variety of links. I used the first effect.
 */
 
 .cl-effect-1{
@@ -269,20 +277,27 @@ a {  color: #9C27B0;  }
 ---------------------------------------*/
 #searchbox_container{
   display: inline-block;
+  margin-top: 20px;
 }
 
 .searchbox_form_group{
   display: inline-block;
 }
 
+.searchbox_label{
+  padding-right: 10px;
+}
+
 /* 6.List Component
 ---------------------------------------*/
 .list-group-item{
   height: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .list-group-item:last-child{
-  margin-bottom: 30px;
+ 
 }
 
 .list_template_ul:hover{

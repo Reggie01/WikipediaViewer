@@ -14,7 +14,7 @@
   </![endif]-->
 </head>
   <body>
-    <div class="container">
+    <div class="container app_container">
       <div id="random_article_container" class="container"></div>
       <div id="searchbox_container"></div><div id="result_counter_container"></div>
       <div id="list_container"></div>
@@ -29,7 +29,7 @@
         <a href="{{url}}" target="_blank">
           <li class="list-group-item">
             <div class="list-indicator"></div>
-            <h3>{{title}}</h3>
+            <h5>{{title}}</h5>
             <p>{{extract}}</p>
           </li>
         </a>
@@ -41,10 +41,10 @@
     </script>
     <script id="searchbox-template" type="text/x-handlebars-template">
        <div id="searchbox_container">
-        <form class="">
+        <form class="form-inline">
           <div class="form-group searchbox_form_group">
-            <label for="exampleInputEmail2">Wiki Search</label>
-            <input type="text" class="form-control" id="exampleInputEmail2" placeholder="Enter Search...">
+            <label class="searchbox_label" for="Wiki Search">Wiki Search</label>
+            <input type="text" class="form-control" id="searchbox_input" placeholder="Enter Search...">
           </div>
           <button type="submit" class="btn btn-default">Search</button>
         </form>
@@ -57,10 +57,11 @@
     </script>
     <script id="random-article-template" type="text/x-handlebars-template">
       
-        <a class="cl-effect-1" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank" data-hover="Random Wiki Search">Random Wiki Search</a>
+        <a class="cl-effect-1" href="http://en.wikipedia.org/wiki/Special:Random" target="_blank" data-hover="Random Wiki Search">Random Wiki Search Link</a>
       
     </script>
     <script src="js/index.js"></script>
+
   </body>
 </html>
   
