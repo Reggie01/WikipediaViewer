@@ -65,7 +65,7 @@
      
       $( "#list_container" ).html( listTemplate({ items: items, results: false  }) );
       $( "#result_counter_container" ).html( resultCounterTemplate({ count: items.length }) );
-      console.log( items );      
+      // console.log( items );      
      } else {
 
        $( "#list_container" ).html( listTemplate({ items: items, results: true  }) );
